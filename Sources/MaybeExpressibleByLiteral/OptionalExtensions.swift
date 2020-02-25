@@ -41,7 +41,7 @@ extension Optional : ExpressibleByFloatLiteral where Wrapped : MaybeExpressibleB
 
 extension Optional : ExpressibleByArrayLiteral where Wrapped : MaybeExpressibleByArrayLiteral {
     public init(arrayLiteral elements: Wrapped.ArrayLiteralElement...) {
-        self = Wrapped.tryToExpressWithArray(array: elements)
+        self = Wrapped.tryToExpressWithArrayLiteral(array: elements)
     }
 }
 

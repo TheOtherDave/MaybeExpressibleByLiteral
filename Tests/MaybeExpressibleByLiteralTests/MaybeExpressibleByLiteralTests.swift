@@ -9,6 +9,7 @@ final class MaybeExpressibleByLiteralTests: XCTestCase {
         static func tryToExpressWithIntegerLiteral(integerLiteral value: Int) -> MaybeExpressibleByLiteralTests.OnlyEven? {
             value.isMultiple(of: 2) ? OnlyEven(value: value) : nil
         }
+        
         var value: Int
     }
     
@@ -21,7 +22,7 @@ final class MaybeExpressibleByLiteralTests: XCTestCase {
     }
     
     struct ThreeElements<T: Equatable> : MaybeExpressibleByArrayLiteral, Equatable {
-        static func tryToExpressWithArray(array elements: [T]) -> MaybeExpressibleByLiteralTests.ThreeElements<T>? {
+        static func tryToExpressWithArrayLiteral(array elements: [T]) -> MaybeExpressibleByLiteralTests.ThreeElements<T>? {
             elements.count == 3 ? ThreeElements(elements: elements) : nil
         }
         
@@ -34,6 +35,7 @@ final class MaybeExpressibleByLiteralTests: XCTestCase {
         }
 
         var elements: [Int : Int] = [:]
+        
         init(elements: [(Int, Int)]) {
             for (key, value) in elements {
                 self.elements[key] = value
@@ -53,6 +55,7 @@ final class MaybeExpressibleByLiteralTests: XCTestCase {
         static func tryToExpressWithBooleanLiteral(booleanLiteral value: Bool) -> MaybeExpressibleByLiteralTests.AlwaysTrueWaitWhyWouldYouDoThis? {
             value ? AlwaysTrueWaitWhyWouldYouDoThis(value: value) : nil
         }
+        
         var value : Bool
     }
     

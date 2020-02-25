@@ -19,3 +19,4 @@ extension MaybeExpressibleByArrayLiteral {
         tryToExpressWithArrayLiteral(array: elements)
     }
 }
+
